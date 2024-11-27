@@ -84,3 +84,6 @@ func (m mymap) GetValues() ([]any, error) {
 
 // print map
 // Key:-> key Value-> value
+
+// package management
+// interfaces
