@@ -6,8 +6,19 @@ func main() {
 
 	r1 := New(123.123, 123.23)
 	var s1 Square = 123.123
-	Shape(r1)
-	Shape(s1)
+	// Shape(r1)
+	// Shape(s1)
+
+	slice := make([]IShape, 2)
+	slice[0] = r1
+	slice[1] = s1
+
+	for _, v := range slice {
+		Shape(v)
+	}
+	// Cuboid
+	// creat a slice of interfaces
+	// all all object like 2 rect , 2 square , 1 cuboid and run them in a loop
 }
 
 func Shape(ishape IShape) {
