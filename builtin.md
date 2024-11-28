@@ -1,6 +1,6 @@
 ## keywords
 
-break,case,const,continue,default,else,fallthrough,for,func,goto,if,import,map,package,range,return,struct,switch,type,var,(20 of 25)
+break,case,const,continue,default,else,fallthrough,for,func,go,goto,if,import,interface,map,package,range,return,struct,switch,type,var,(22 of 25)
 
 ## builtin
 

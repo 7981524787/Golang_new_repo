@@ -6,6 +6,7 @@ var counter int = 0
 var mu *sync.Mutex = new(sync.Mutex)
 
 func main() {
+
 	wg := new(sync.WaitGroup)
 	wg.Add(302)
 
@@ -65,4 +66,8 @@ func (c *Counter) Decr(wg *sync.WaitGroup, mu *sync.Mutex) {
 	c.C--
 	c.Mu.Unlock()
 	wg.Done()
+}
+
+func add(a, b int) int {
+	return a + b
 }
