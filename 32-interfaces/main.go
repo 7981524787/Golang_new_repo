@@ -8,6 +8,14 @@ func main() {
 	fmt.Println(v)
 }
 
+// db.Select("from users").Joins("orders on order.id=user.id").Where("user.id=somecal")
+
+// type IDB interface{
+// 	Select(string)IDB
+// 	Join(string)IDB
+// 	Where(string)IDB
+// }
+
 type Calc struct {
 	Data int
 }
