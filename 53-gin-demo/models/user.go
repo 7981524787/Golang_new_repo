@@ -1,13 +1,16 @@
 package models
 
-import "errors"
+import (
+	"errors"
+)
 
 type User struct {
-	Id           int    `json:"id"`
+	Id uint `json:"id" gorm:"primaryKey"`
+	//*gorm.Model         // promoted fields
 	Name         string `json:"name"`
 	Email        string `json:"email"`
 	Status       string `json:"status"`
-	LastModified int64  `json:"last_modified"`
+	LastModified int64  `json:"last_modified" gorm:"column:last_modified"`
 }
 
 func (u *User) Validate() error {
