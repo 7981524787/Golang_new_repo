@@ -17,13 +17,13 @@ func main() {
 	<-sig2
 }
 
-func generate(num int, ch1 chan int) {
+func generate(num int, ch1 chan<- int) {
 	for i := 1; i <= num; i++ {
 		ch1 <- i
 	}
 	close(ch1) // closing channel is a pattern
 }
-func receiver1(ch1 chan int, ch2 chan int, sig chan struct{}) {
+func receiver1(ch1 <-chan int, ch2 chan<- int, sig chan<- struct{}) {
 	for v := range ch1 {
 		fmt.Println("Received from Generator-->", v)
 		ch2 <- v * v
@@ -33,7 +33,7 @@ func receiver1(ch1 chan int, ch2 chan int, sig chan struct{}) {
 	close(sig)
 }
 
-func receiver2(ch2 chan int, sig chan empty) {
+func receiver2(ch2 <-chan int, sig chan<- empty) {
 	for v := range ch2 {
 		fmt.Println("Received from receiver1-->", v)
 	}

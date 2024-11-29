@@ -42,7 +42,12 @@ func (fw *FileWriter) Write(p []byte) (n int, err error) {
 	}
 	defer f.Close() // ignore defer as of now
 
-	return f.Write(p)
+	// _, err = f.Write(p)
+	// if err != nil {
+	// 	f.Close()
+	// }
+	// f.Close()
+	return 0, nil
 }
 
 type IShape interface {
