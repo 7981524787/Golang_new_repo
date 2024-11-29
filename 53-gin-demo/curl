@@ -1,0 +1,9 @@
+curl --location 'localhost:50091/user' \
+--header 'token: 123456' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic aml0ZW46MTIzMTIz' \
+--data-raw '{
+    "id":101,
+    "name":"Jiten",
+    "email":"JitenP@outlook.com"
+}'
